@@ -1,0 +1,3 @@
+[submodule "oled"]
+	path = oled
+	url = https://gitee.com/hihopeorg/harmonyos-ssd1306.git

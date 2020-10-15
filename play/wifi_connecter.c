@@ -123,12 +123,3 @@ void DisconnectWithHotspot(int netId)
     printf("DisableWifi: %d\r\n", errCode);
 }
 
-void PrepareHotspotConfig(WifiDeviceConfig* apConfig, const char* ssid, const char* psk, WifiSecurityType secType)
-{
-    if (!apConfig || !ssid || !psk) return;
-    // setup your AP params
-    strcpy(apConfig->ssid, ssid);
-    strcpy(apConfig->preSharedKey, psk);
-    apConfig->securityType = secType;
-}
-

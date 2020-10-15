@@ -32,8 +32,6 @@
 
 #include "wifi_device.h"
 
-void PrepareHotspotConfig(WifiDeviceConfig* apConfig, const char* ssid, const char* psk, WifiSecurityType secType);
-
 int ConnectToHotspot(WifiDeviceConfig* apConfig);
 
 void DisconnectWithHotspot(int netId);

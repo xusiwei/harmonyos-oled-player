@@ -155,9 +155,12 @@ static void Ssd1306PlayTask(void* arg)
     ssd1306_DrawString("Hello HarmonyOS!", Font_7x10, White);
     ssd1306_UpdateScreen();
 
-    // prepare hotspot prarams and connect to it!
+    // prepare hotspot prarams
     WifiDeviceConfig apConfig = {};
-    PrepareHotspotConfig(&apConfig, PARAM_HOTSPOT_SSID, PARAM_HOTSPOT_PSK, PARAM_HOTSPOT_TYPE);
+    strcpy(apConfig.ssid, PARAM_HOTSPOT_SSID);
+    strcpy(apConfig.preSharedKey, PARAM_HOTSPOT_PSK);
+    apConfig.securityType = PARAM_HOTSPOT_TYPE;
+
     int netId = ConnectToHotspot(&apConfig);
     if (netId < 0) {
         printf("connect to hotspot failed!\r\n");

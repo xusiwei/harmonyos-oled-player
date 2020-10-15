@@ -28,6 +28,7 @@
 static_library("stream_player") {
     sources = [
         "stream_player.c",
+        "wifi_connecter.c",
     ]
 
     include_dirs = [

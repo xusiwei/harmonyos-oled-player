@@ -26,15 +26,16 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-#ifndef NET_PARAMS_H
-#define NET_PARAMS_H
 
-#define PARAM_HOTSPOT_SSID "ABCD"      // your AP SSID
-#define PARAM_HOTSPOT_PSK  "12345678"  // your AP PSK
+#ifndef WIFI_CONNECTER_H
+#define WIFI_CONNECTER_H
 
-#define PARAM_HOTSPOT_TYPE WIFI_SEC_TYPE_PSK // defined in wifi_device_config.h
+#include "wifi_device.h"
 
-#define PARAM_SERVER_ADDR "192.168.1.100" // your PC IP address
-#define PARAM_SERVER_PORT 5678
+void PrepareHotspotConfig(WifiDeviceConfig* apConfig, const char* ssid, const char* psk, WifiSecurityType secType);
 
-#endif  // NET_PARAMS_H
+int ConnectToHotspot(WifiDeviceConfig* apConfig);
+
+void DisconnectWithHotspot(int netId);
+
+#endif  // WIFI_CONNECTER_H
